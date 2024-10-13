@@ -479,13 +479,13 @@ spec aptos_framework::object {
         aborts_if true;
     }
 
-    spec burn_object<T: key>(owner: &signer, object: Object<T>) {
-        pragma aborts_if_is_partial;
-        let object_address = object.inner;
-        aborts_if !exists<ObjectCore>(object_address);
-        aborts_if owner(object) != signer::address_of(owner);
-        aborts_if is_burnt(object);
-    }
+//    spec burn_object<T: key>(owner: &signer, object: Object<T>) {
+//        pragma aborts_if_is_partial;
+//        let object_address = object.inner;
+//        aborts_if !exists<ObjectCore>(object_address);
+//        aborts_if owner(object) != signer::address_of(owner);
+//        aborts_if is_burnt(object);
+//    }
 
     spec unburn<T: key>(original_owner: &signer, object: Object<T>) {
         pragma aborts_if_is_partial;
